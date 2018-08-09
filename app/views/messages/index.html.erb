@@ -1,0 +1,10 @@
+<h1>Status- <%= @status %></h1>
+<h4>Recent messages:</h4>
+<ul>	
+	<% @messages.each do |message| %>
+		<li>
+			<%= message.body %><br>
+			<nbsp><%= message.updated_at.strftime("%b %d, %Y at %l:%M") %>
+		</li>
+	<% end %>
+</ul>

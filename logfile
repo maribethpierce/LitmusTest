@@ -1,0 +1,73 @@
+LOG:  database system was shut down at 2018-08-08 20:25:51 EDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "statuses" does not exist at character 27
+STATEMENT:  SELECT  "statuses".* FROM "statuses" LIMIT $1
+ERROR:  relation "updates" does not exist at character 26
+STATEMENT:  SELECT  "updates".* FROM "updates" LIMIT $1
+ERROR:  syntax error at or near "." at character 1
+STATEMENT:  .table
+	;
+ERROR:  database "interviewTask_development" is being accessed by other users
+DETAIL:  There are 2 other sessions using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "interviewTask_development"
+FATAL:  database "maribeth.pierce" does not exist
+ERROR:  syntax error at or near "stat" at character 1
+STATEMENT:  stat = SELECT * FROM Updates;
+ERROR:  syntax error at or near "stat" at character 1
+STATEMENT:  stat = SELECT * FROM Updates
+	;
+ERROR:  syntax error at or near "stat" at character 1
+STATEMENT:  stat = SELECT * FROM Update;
+ERROR:  syntax error at or near ":" at character 21
+STATEMENT:  SELECT * FROM UPDATE:
+	;
+ERROR:  relation "update" does not exist at character 15
+STATEMENT:  SELECT * FROM UPDATE
+	;
+ERROR:  syntax error at or near "TABLES" at character 1
+STATEMENT:  TABLES
+	;
+ERROR:  syntax error at or near ";" at character 6
+STATEMENT:  table;
+ERROR:  unrecognized configuration parameter "tables"
+STATEMENT:  show tables;
+ERROR:  syntax error at or near ";" at character 6
+STATEMENT:  show
+	;
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (1, t, 2018-08-08 22:20:13.868095, null).
+STATEMENT:  INSERT INTO updates(status, created_at) VALUES ('true', NOW());
+ERROR:  syntax error at or near "quit" at character 1
+STATEMENT:  quit
+	;
+ERROR:  null value in column "created_at" violates not-null constraint
+DETAIL:  Failing row contains (1, t, null, null).
+STATEMENT:  INSERT INTO status(status) VALUES (true);
+ERROR:  INSERT has more expressions than target columns at character 42
+STATEMENT:  INSERT INTO status(status) VALUES (true, NOW(),NOW());
+ERROR:  INSERT has more expressions than target columns at character 41
+STATEMENT:  INSERT INTO status(status) VALUES (true,NOW(),NOW());
+ERROR:  INSERT has more expressions than target columns at character 41
+STATEMENT:  INSERT INTO status(status) VALUES (true,NOW());
+ERROR:  null value in column "created_at" violates not-null constraint
+DETAIL:  Failing row contains (2, t, null, null).
+STATEMENT:  INSERT INTO status(status) VALUES (true);
+ERROR:  database "interviewTask_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "interviewTask_development"
+ERROR:  database "interviewTask_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "interviewTask_development"
+ERROR:  database "interviewTask_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "interviewTask_development"
+FATAL:  database "interviewTask_development" does not exist
+ERROR:  relation "statuses" does not exist at character 27
+STATEMENT:  SELECT  "statuses".* FROM "statuses" ORDER BY "statuses"."id" ASC LIMIT $1
+ERROR:  relation "status" does not exist
+STATEMENT:  CREATE UNIQUE INDEX  "index_status_on_singleton_guard" ON "status"  ("singleton_guard")
+FATAL:  database "maribeth.pierce" does not exist
+ERROR:  relation "status" does not exist at character 15
+STATEMENT:  SELECT * FROM status;
